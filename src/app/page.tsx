@@ -476,7 +476,7 @@ export default function Home() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-6">
               {techStack.map((tech, idx) => (
-                <div key={idx} className="w-full h-full p-3.5 sm:p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col items-center">
+                <div key={idx} className="w-full h-full p-3.5 sm:p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col items-center min-h-[160px]">
                   <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue mb-3 shrink-0">
                     {tech.icon}
                   </div>
