@@ -77,7 +77,7 @@ export default function InteractiveDashboard() {
       </div>
 
       {/* KPI Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <div className="p-4 bg-slate-50 rounded-xl border border-slate-100">
           <div className="flex items-center justify-between text-slate-500 mb-2">
             <span className="text-xs font-medium uppercase tracking-wider">{t('Registered Voters', 'Registered Voters')}</span>
@@ -162,12 +162,12 @@ export default function InteractiveDashboard() {
         {/* AI Voice Broadcast Call Simulator (Right) */}
         <div className="lg:col-span-7 p-5 rounded-xl border border-slate-100 bg-slate-50 flex flex-col justify-between min-h-[320px]">
           <div>
-            <div className="flex justify-between items-center mb-4">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 mb-4">
               <h4 className="text-sm font-bold text-brand-dark uppercase tracking-wider flex items-center gap-1">
                 <Brain className="w-4 h-4 text-brand-blue" /> {t('Outbound AI voice dialer simulator', 'Outbound AI voice dialer simulator')}
               </h4>
               {/* Dialect Selector */}
-              <div className="flex gap-1 bg-white p-1 rounded-lg border border-slate-200">
+              <div className="flex gap-1 bg-white p-1 rounded-lg border border-slate-200 shrink-0 self-start sm:self-auto">
                 {Object.keys(dialectGreetings).map((lang) => (
                   <button
                     key={lang}
@@ -186,7 +186,7 @@ export default function InteractiveDashboard() {
             </div>
 
             {/* Display Simulator Status */}
-            <div className="bg-slate-900 text-slate-300 font-mono text-xs p-4 rounded-xl mb-4 min-h-[120px] flex flex-col justify-center">
+            <div className="bg-slate-900 text-slate-300 font-mono text-xs p-4 rounded-xl mb-4 min-h-[145px] flex flex-col justify-center">
               {aiState === 'idle' && (
                 <div className="text-center text-slate-400">
                   <Phone className="w-8 h-8 text-slate-600 mx-auto mb-2" />
@@ -205,7 +205,7 @@ export default function InteractiveDashboard() {
                   <p className="text-emerald-500">&gt; {t('Dialer nodes ready. SSL connection secure.', 'Dialer nodes ready. SSL connection secure.')}</p>
                   <p className="text-brand-gold animate-pulse">&gt; Loading voice model for dialect: {dialect.toUpperCase()}...</p>
                   <p className="text-[10px] text-slate-500 font-serif italic mt-1">
-                    "{dialectGreetings[dialect as keyof typeof dialectGreetings]}"
+                    &quot;{dialectGreetings[dialect as keyof typeof dialectGreetings]}&quot;
                   </p>
                 </div>
               )}

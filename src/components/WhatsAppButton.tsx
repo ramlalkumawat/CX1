@@ -26,7 +26,7 @@ export default function WhatsAppButton() {
       </svg>
 
       {/* Tooltip/Label */}
-      <span className="absolute right-16 opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 rounded bg-slate-900/90 text-white px-3 py-1.5 text-xs font-semibold whitespace-nowrap shadow-xl backdrop-blur-sm pointer-events-none">
+      <span className="hidden md:block absolute right-16 opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 rounded bg-slate-900/90 text-white px-3 py-1.5 text-xs font-semibold whitespace-nowrap shadow-xl backdrop-blur-sm pointer-events-none">
         Chat on WhatsApp
       </span>
     </a>

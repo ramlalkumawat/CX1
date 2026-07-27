@@ -265,7 +265,7 @@ export default function Home() {
 
               {/* Graphic Side */}
               <div className="lg:col-span-5 relative">
-                <div className="w-full aspect-square max-w-[420px] mx-auto rounded-3xl bg-slate-50 border border-slate-200/80 p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
+                <div className="w-full aspect-auto sm:aspect-square max-w-[420px] mx-auto rounded-3xl bg-slate-50 border border-slate-200/80 p-8 shadow-xl flex flex-col justify-between relative overflow-hidden">
                   <div className="absolute top-[-20%] right-[-20%] w-60 h-60 bg-blue-100 rounded-full blur-3xl opacity-60 z-0" />
                   <div className="absolute bottom-[-20%] left-[-20%] w-60 h-60 bg-amber-100 rounded-full blur-3xl opacity-60 z-0" />
 
@@ -276,11 +276,11 @@ export default function Home() {
 
                   <div className="relative z-10 space-y-3 my-6">
                     <div className="p-3 bg-white border border-slate-100 rounded-xl shadow-xs flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue"><Database className="w-4.5 h-4.5" /></div>
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue"><Database className="w-4 h-4" /></div>
                       <div className="min-w-0 flex-1"><p className="text-xs font-bold text-slate-800">{t('Secure Voter CRM Node', 'Secure Voter Voter CRM Node')}</p><p className="text-[9px] text-slate-500 truncate">{t('Voter segments synced successfully', 'Voter segments synced successfully')}</p></div>
                     </div>
                     <div className="p-3 bg-white border border-slate-100 rounded-xl shadow-xs flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-brand-gold"><TrendingUp className="w-4.5 h-4.5" /></div>
+                      <div className="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center text-brand-gold"><TrendingUp className="w-4 h-4" /></div>
                       <div className="min-w-0 flex-1"><p className="text-xs font-bold text-slate-800">{t('Demographic Swing Analyzer', 'Demographic Swing Analyzer')}</p><p className="text-[9px] text-slate-500 truncate">{t('Calculated swing margin: +4.12%', 'Calculated swing margin: +4.12%')}</p></div>
                     </div>
                   </div>
@@ -391,11 +391,11 @@ export default function Home() {
               {valueProps.map((prop, idx) => (
                 <div
                   key={idx}
-                  className="p-6 sm:p-8 bg-white border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200"
+                  className="w-full h-full p-6 sm:p-8 bg-white border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col"
                 >
                   <div className="mb-4">{prop.icon}</div>
                   <h3 className="text-lg font-bold text-brand-dark mb-2">{prop.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">{prop.description}</p>
+                  <p className="text-xs sm:text-sm text-slate-500 leading-relaxed flex-grow">{prop.description}</p>
                 </div>
               ))}
             </div>
@@ -432,7 +432,7 @@ export default function Home() {
                 Rajasthan District Strategic Portals
               </h2>
               <p className="text-sm text-slate-500 mt-2">
-                Select your assembly constituency's district to view tailored key issues and demographic weights mapped by CampaignX.
+                Select your assembly constituency&apos;s district to view tailored key issues and demographic weights mapped by CampaignX.
               </p>
             </div>
 
@@ -476,7 +476,7 @@ export default function Home() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
               {techStack.map((tech, idx) => (
-                <div key={idx} className="p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col justify-between items-center min-h-[160px]">
+                <div key={idx} className="w-full h-full p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col justify-between items-center min-h-[160px]">
                   <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue mb-3">
                     {tech.icon}
                   </div>
@@ -507,7 +507,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               {steps.map((step, idx) => (
-                <div key={idx} className="p-5 rounded-2xl border border-slate-200/80 bg-slate-50 flex flex-col justify-between min-h-[200px]">
+                <div key={idx} className="w-full h-full p-5 rounded-2xl border border-slate-200/80 bg-slate-50 flex flex-col justify-between min-h-[200px]">
                   <div>
                     <span className="text-2xl font-extrabold text-brand-blue/30 block mb-2">{step.number}</span>
                     <h3 className="text-sm font-bold text-slate-800 mb-2">{step.title}</h3>
@@ -536,7 +536,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {caseStudies.map((cs, idx) => (
-                <div key={idx} className="p-6 sm:p-8 bg-white border border-slate-200/85 rounded-3xl shadow-sm">
+                <div key={idx} className="w-full h-full p-6 sm:p-8 bg-white border border-slate-200/85 rounded-3xl shadow-sm flex flex-col justify-between">
                   <span className="text-[10px] uppercase font-bold text-brand-blue">{cs.meta}</span>
                   <h3 className="text-lg sm:text-xl font-bold text-brand-dark mt-1.5 mb-3">{cs.title}</h3>
                   <p className="text-xs sm:text-sm text-slate-500 leading-relaxed mb-4">{cs.summary}</p>
@@ -579,7 +579,7 @@ export default function Home() {
             {/* Co-Founders Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
               {founders.map((m, idx) => (
-                <div key={idx} className="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div key={idx} className="w-full h-full bg-slate-50 border border-slate-200/80 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 shadow-sm hover:shadow-md transition-shadow duration-300">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden shrink-0 border border-slate-200 relative shadow-sm mx-auto sm:mx-0">
                     <img src={m.image} alt={t(m.name, m.name)} className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300" />
                   </div>
@@ -603,10 +603,10 @@ export default function Home() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {coreTeam.map((m, idx) => (
-                  <div key={idx} className="p-5 bg-white border border-slate-250/70 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow duration-200">
+                  <div key={idx} className="w-full h-full p-5 bg-white border border-slate-200/70 rounded-2xl flex flex-col justify-between hover:shadow-md transition-shadow duration-200">
                     <div>
                       <div className="w-9 h-9 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue mb-4">
-                        <User className="w-4.5 h-4.5" />
+                        <User className="w-5 h-5" />
                       </div>
                       <h4 className="text-base font-bold text-slate-800">{t(m.name, m.name)}</h4>
                       <p className="text-xs text-brand-blue font-semibold mt-1 uppercase tracking-tight">{t(m.role, m.role)}</p>
@@ -667,7 +667,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {blogs.map((blog, idx) => (
-                <div key={idx} className="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-slate-200 transition-colors flex flex-col justify-between">
+                <div key={idx} className="w-full h-full p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:border-slate-200 transition-colors flex flex-col justify-between">
                   <div>
                     <span className="text-[10px] font-bold text-brand-gold block">{t(blog.date, blog.date)}</span>
                     <h3 className="text-base font-bold text-brand-dark mt-2 mb-3 leading-snug">{t(blog.title, blog.title)}</h3>

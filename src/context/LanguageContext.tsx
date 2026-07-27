@@ -18,11 +18,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem('language');
-    if (stored === 'hi' || stored === 'en') {
-      setLanguage(stored);
-    }
+    const timer = setTimeout(() => {
+      setMounted(true);
+      const stored = localStorage.getItem('language');
+      if (stored === 'hi' || stored === 'en') {
+        setLanguage(stored);
+      }
+    }, 0);
+    return () => clearTimeout(timer);
   }, []);
 
   const handleSetLanguage = (lang: Language) => {

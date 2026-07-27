@@ -21,12 +21,12 @@ export default function DistrictHub() {
               <MapPin className="w-5 h-5 text-brand-blue" /> Choose your district
             </h3>
             <p className="text-xs text-slate-500 mt-1">
-              Select one of Rajasthan's districts to see targeted booth stats and localized campaign consulting strategy options.
+              Select one of Rajasthan&apos;s districts to see targeted booth stats and localized campaign consulting strategy options.
             </p>
           </div>
 
           {/* District Grid Selector */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-2 gap-2 max-h-[360px] overflow-y-auto pr-1 border border-slate-100 p-2.5 rounded-xl bg-slate-50">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-2 gap-2 max-h-[360px] overflow-y-auto pr-1 border border-slate-100 p-2.5 rounded-xl bg-slate-50">
             {DISTRICTS.map((d) => (
               <button
                 key={d.slug}
@@ -102,7 +102,7 @@ export default function DistrictHub() {
               <Settings className="w-4 h-4 text-brand-blue" /> CampaignX Operational Blueprints
             </h5>
             <p className="text-xs text-slate-600 leading-relaxed italic">
-              "{selectedDistrict.strategicApproach}"
+              &quot;{selectedDistrict.strategicApproach}&quot;
             </p>
           </div>
         </div>

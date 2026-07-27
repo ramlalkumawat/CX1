@@ -96,12 +96,12 @@ export default function DistrictPageClient({ district }: DistrictPageClientProps
                 </h1>
               </div>
             </div>
-            <a
+            <Link
               href="/#contact"
-              className="px-6 py-3 rounded-xl bg-brand-blue text-white hover:bg-blue-700 font-bold text-sm shadow-md hover:shadow-lg transition-all"
+              className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-brand-blue text-white hover:bg-blue-700 font-bold text-sm shadow-md hover:shadow-lg transition-all"
             >
               {t('Get Local Strategy Blueprint', 'Get Local Strategy Blueprint')}
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -136,7 +136,7 @@ export default function DistrictPageClient({ district }: DistrictPageClientProps
                   </p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                     {district.keyIssues.map((issue, idx) => (
-                      <li key={idx} className="p-3 bg-slate-50 border border-slate-100 rounded-xl flex items-start gap-2.5">
+                      <li key={idx} className="w-full h-full p-3 bg-slate-50 border border-slate-100 rounded-xl flex items-start gap-2.5">
                         <CheckCircle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                         <span className="text-slate-700 font-semibold">{t(issue, issue)}</span>
                       </li>

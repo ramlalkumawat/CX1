@@ -17,7 +17,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
   const { t } = useLanguage();
 
   const renderIcon = (iconName: string) => {
-    const IconComp = (Lucide as any)[iconName];
+    const IconComp = (Lucide as unknown as Record<string, React.ComponentType<{ className?: string }>>)[iconName];
     if (IconComp) {
       return <IconComp className="w-8 h-8 text-brand-blue" />;
     }
@@ -71,12 +71,12 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
                 </h1>
               </div>
             </div>
-            <a
+            <Link
               href="/#contact"
-              className="px-6 py-3 rounded-xl bg-brand-blue text-white hover:bg-blue-700 font-bold text-sm shadow-md hover:shadow-lg transition-all"
+              className="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-brand-blue text-white hover:bg-blue-700 font-bold text-sm shadow-md hover:shadow-lg transition-all"
             >
               {t('Request Campaign Audit', 'Request Campaign Audit')}
-            </a>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -118,7 +118,7 @@ export default function ServicePageClient({ service }: ServicePageClientProps) {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {service.deliverables.map((del, idx) => (
-                    <div key={idx} className="p-4 bg-slate-50 border border-slate-100 rounded-xl">
+                    <div key={idx} className="w-full h-full p-4 bg-slate-50 border border-slate-100 rounded-xl">
                       <Clock className="w-5 h-5 text-brand-gold mb-2" />
                       <p className="text-xs text-slate-800 font-bold leading-relaxed">{t(del, del)}</p>
                     </div>

@@ -22,6 +22,17 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Why Us', href: '#why-choose-us' },
@@ -35,8 +46,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass-header py-3 shadow-sm' : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-[padding,background-color,box-shadow] duration-300 ${
+        scrolled || isOpen ? 'glass-header py-3 shadow-sm' : 'bg-transparent py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,7 +83,7 @@ export default function Header() {
                 onClick={() => setLanguage('en')}
                 className={`px-2.5 py-1 rounded-md transition-all ${
                   language === 'en'
-                    ? 'bg-white text-brand-blue shadow-xs font-bold'
+                    ? 'bg-white text-brand-blue shadow-xs'
                     : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
@@ -82,7 +93,7 @@ export default function Header() {
                 onClick={() => setLanguage('hi')}
                 className={`px-2.5 py-1 rounded-md transition-all ${
                   language === 'hi'
-                    ? 'bg-white text-brand-blue shadow-xs font-bold'
+                    ? 'bg-white text-brand-blue shadow-xs'
                     : 'text-slate-500 hover:text-slate-800'
                 }`}
               >
@@ -113,7 +124,7 @@ export default function Header() {
 
       {/* Mobile Drawer Menu */}
       {isOpen && (
-        <div className="lg:hidden animate-fade-in absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl z-40 px-4 py-6">
+        <div className="lg:hidden animate-fade-in absolute top-full left-0 right-0 bg-white border-b border-slate-100 shadow-xl z-40 px-4 py-6 max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="flex flex-col gap-4">
             {/* Mobile Language Switcher */}
             <div className="flex items-center justify-between border-b border-slate-50 pb-3">
@@ -123,7 +134,7 @@ export default function Header() {
                   onClick={() => setLanguage('en')}
                   className={`px-3 py-1 rounded-md transition-all ${
                     language === 'en'
-                      ? 'bg-white text-brand-blue shadow-xs font-bold'
+                      ? 'bg-white text-brand-blue shadow-xs'
                       : 'text-slate-500'
                   }`}
                 >
@@ -133,7 +144,7 @@ export default function Header() {
                   onClick={() => setLanguage('hi')}
                   className={`px-3 py-1 rounded-md transition-all ${
                     language === 'hi'
-                      ? 'bg-white text-brand-blue shadow-xs font-bold'
+                      ? 'bg-white text-brand-blue shadow-xs'
                       : 'text-slate-500'
                   }`}
                 >

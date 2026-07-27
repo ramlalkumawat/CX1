@@ -12,7 +12,7 @@ export default function ServiceExplorer() {
   const [activeCategory, setActiveCategory] = useState<'strategy' | 'data' | 'technology' | 'digital' | 'operations' | 'other'>('strategy');
   const [selectedSlug, setSelectedSlug] = useState('political-consulting');
 
-  const categories = [
+  const categories: { id: 'strategy' | 'data' | 'technology' | 'digital' | 'operations' | 'other'; name: string }[] = [
     { id: 'strategy', name: 'Strategy & Advisory' },
     { id: 'data', name: 'Research & Data' },
     { id: 'technology', name: 'Campaign Tech & CRM' },
@@ -34,7 +34,7 @@ export default function ServiceExplorer() {
 
   // Dynamic Lucide icon helper
   const renderIcon = (iconName: string) => {
-    const IconComp = (Lucide as any)[iconName];
+    const IconComp = (Lucide as unknown as Record<string, React.ComponentType<{ className?: string }>>)[iconName];
     if (IconComp) {
       return <IconComp className="w-5 h-5 text-brand-blue" />;
     }
@@ -49,7 +49,7 @@ export default function ServiceExplorer() {
           <button
             key={cat.id}
             onClick={() => {
-              setActiveCategory(cat.id as any);
+              setActiveCategory(cat.id);
               // Set default selected service in that category
               const firstInCat = SERVICES.find((s) => s.category === cat.id);
               if (firstInCat) setSelectedSlug(firstInCat.slug);
@@ -67,7 +67,7 @@ export default function ServiceExplorer() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* Service Sub-List Selector (Left) */}
-        <div className="lg:col-span-4 flex flex-col gap-2 max-h-[450px] overflow-y-auto pr-2 border-r border-slate-100">
+        <div className="lg:col-span-4 flex flex-col gap-2 max-h-[250px] lg:max-h-[450px] overflow-y-auto pr-2 border-b lg:border-b-0 lg:border-r border-slate-100 pb-4 lg:pb-0 lg:pr-4">
           {filteredServices.map((service) => (
             <button
               key={service.slug}
@@ -125,7 +125,7 @@ export default function ServiceExplorer() {
               </h5>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {selectedService.benefits.map((benefit, i) => (
-                  <div key={i} className="p-3 bg-slate-50 border border-slate-100 rounded-xl">
+                  <div key={i} className="w-full h-full p-3 bg-slate-50 border border-slate-100 rounded-xl">
                     <CheckCircle2 className="w-4 h-4 text-emerald-500 mb-1.5" />
                     <p className="text-xs text-slate-700 font-medium leading-relaxed">{t(benefit, benefit)}</p>
                   </div>
@@ -159,8 +159,8 @@ export default function ServiceExplorer() {
                 </h5>
                 <ul className="space-y-2.5">
                   {selectedService.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-slate-600">
-                      <PlayCircle className="w-4.5 h-4.5 text-brand-blue shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2.5 text-xs text-slate-600">
+                      <PlayCircle className="w-5 h-5 text-brand-blue shrink-0 mt-0.5" />
                       <span>{t(feature, feature)}</span>
                     </li>
                   ))}
