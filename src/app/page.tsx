@@ -474,16 +474,14 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-6">
               {techStack.map((tech, idx) => (
-                <div key={idx} className="w-full h-full p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col justify-between items-center min-h-[160px]">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue mb-3">
+                <div key={idx} className="w-full h-full p-3.5 sm:p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col items-center">
+                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue mb-3 shrink-0">
                     {tech.icon}
                   </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-800">{t(tech.name, tech.name)}</h4>
-                    <p className="text-[10px] text-slate-400 mt-2.5 leading-relaxed">{t(tech.desc, tech.desc)}</p>
-                  </div>
+                  <h4 className="text-xs font-bold text-slate-800">{t(tech.name, tech.name)}</h4>
+                  <p className="text-[10px] text-slate-400 mt-1.5 sm:mt-2.5 leading-relaxed">{t(tech.desc, tech.desc)}</p>
                 </div>
               ))}
             </div>
