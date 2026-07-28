@@ -54,9 +54,8 @@ const organizationSchema = {
   'url': 'https://www.campaignx.in',
   'logo': 'https://www.campaignx.in/logo.png',
   'sameAs': [
-    'https://facebook.com/campaignx',
-    'https://twitter.com/campaignx',
-    'https://linkedin.com/company/campaignx'
+    'https://www.facebook.com/share/18ziWwo382/',
+    'https://www.instagram.com/_campaignx?igsh=MXRscXJyNXkzN3NpMQ=='
   ],
   'contactPoint': {
     '@type': 'ContactPoint',

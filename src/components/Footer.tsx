@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 import { SERVICES } from '@/data/services';
 import { DISTRICTS } from '@/data/districts';
 import { useLanguage } from '@/context/LanguageContext';
@@ -36,14 +36,11 @@ export default function Footer() {
               {t("Rajasthan's most trusted political election strategy & campaign technology portal. Integrating artificial intelligence, spatial analytics, and ground volunteer matrices to execute winning election campaigns.", "Rajasthan's most trusted political election strategy & campaign technology portal. Integrating artificial intelligence, spatial analytics, and ground volunteer matrices to execute winning election campaigns.")}
             </p>
             <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue hover:text-white text-slate-300 transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/18ziWwo382/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue hover:text-white text-slate-300 transition-colors" aria-label="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue hover:text-white text-slate-300 transition-colors" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a href="#" className="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue hover:text-white text-slate-300 transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://www.instagram.com/_campaignx?igsh=MXRscXJyNXkzN3NpMQ==" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-800 hover:bg-brand-blue hover:text-white text-slate-300 transition-colors" aria-label="Instagram">
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>
