@@ -13,24 +13,12 @@ import {
   Cpu,
   Layers,
   Shield,
-  Search,
-  Users,
-  Compass,
   CheckCircle,
   Database,
   ArrowRight,
   HelpCircle,
-  MessageSquare,
-  Award,
   Zap,
-  Globe,
-  Share2,
-  User,
-  Phone,
-  Smartphone,
-  Activity,
-  Server,
-  HardDrive
+  User
 } from 'lucide-react';
 
 export default function Home() {
@@ -64,21 +52,6 @@ export default function Home() {
       title: t('Absolute Database Confidentiality', 'Absolute Database Confidentiality'),
       description: t('Your opponent should never know your metrics. We enforce bank-grade encryption, double-factor authentication, and strict non-disclosure clauses to keep your campaign data secure.', 'Your opponent should never know your metrics. We enforce bank-grade encryption, double-factor authentication, and strict non-disclosure clauses to keep your campaign data secure.')
     }
-  ];
-
-  const techStack = [
-    { name: 'Next.js 15 / React', desc: 'High-performance SSR static generation', icon: <Cpu className="w-5 h-5" /> },
-    { name: 'PostgreSQL / GIS', desc: 'Encrypted voter database with spatial mapping', icon: <Database className="w-5 h-5" /> },
-    { name: 'QGIS & Leaflet', desc: 'Demographic mapping & booth heatmaps', icon: <Compass className="w-5 h-5" /> },
-    { name: 'WhatsApp Cloud API', desc: 'Automated broadcasts & chatbot workflows', icon: <MessageSquare className="w-5 h-5" /> },
-    { name: 'AI Voice Synthesis', desc: 'Dialect voice cloning (Mewari & Marwari)', icon: <BrainIcon className="w-5 h-5" /> },
-    { name: 'Python Data Science', desc: 'Voter swing simulations & statistical models', icon: <TrendingUp className="w-5 h-5" /> },
-    { name: 'Cloudflare WAF CDN', desc: 'DDoS security & bot protection rules', icon: <Shield className="w-5 h-5" /> },
-    { name: 'Twilio & Telecom SIP', desc: 'Concurrent high-throughput OBD calling', icon: <Phone className="w-5 h-5" /> },
-    { name: 'React Native Mobile', desc: 'GPS-tracked door-to-door canvassing app', icon: <Smartphone className="w-5 h-5" /> },
-    { name: 'Apache Kafka Streams', desc: 'Real-time ground survey telemetry processing', icon: <Activity className="w-5 h-5" /> },
-    { name: 'Docker & Kubernetes', desc: 'High-availability secure container orchestration', icon: <Server className="w-5 h-5" /> },
-    { name: 'Redis Cache Nodes', desc: 'Ultra-fast key-value voter lookup caching', icon: <HardDrive className="w-5 h-5" /> },
   ];
 
   const steps = [
@@ -456,35 +429,6 @@ export default function Home() {
             </div>
 
             <ServiceExplorer />
-          </div>
-        </section>
-
-        {/* TECHNOLOGY STACK */}
-        <section className="py-20 bg-slate-50 border-y border-slate-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-brand-blue block">
-                {t('ENTERPRISE ARCHITECTURE', 'ENTERPRISE ARCHITECTURE')}
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand-dark mt-2">
-                {t('Our Campaign Tech Stack', 'Our Campaign Tech Stack')}
-              </h2>
-              <p className="text-sm text-slate-500 mt-3 leading-relaxed">
-                {t('We develop fast, secure, and highly scalable software solutions. We do not host databases on standard insecure web servers.', 'We develop fast, secure, and highly scalable software solutions. We do not host databases on standard insecure web servers.')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-6">
-              {techStack.map((tech, idx) => (
-                <div key={idx} className="w-full h-full p-3.5 sm:p-5 bg-white border border-slate-200/80 rounded-2xl text-center shadow-xs hover:shadow-md transition-shadow duration-200 flex flex-col items-center min-h-[160px]">
-                  <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-brand-blue mb-3 shrink-0">
-                    {tech.icon}
-                  </div>
-                  <h4 className="text-xs font-bold text-slate-800">{t(tech.name, tech.name)}</h4>
-                  <p className="text-[10px] text-slate-400 mt-1.5 sm:mt-2.5 leading-relaxed">{t(tech.desc, tech.desc)}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </section>
 

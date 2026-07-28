@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, MapPin, CheckCircle, HelpCircle, Compass, Database, Sliders } from 'lucide-react';
+import { ArrowLeft, MapPin, CheckCircle, HelpCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { DistrictDetail } from '@/data/districts';
 import Header from '@/components/Header';
@@ -192,27 +192,6 @@ export default function DistrictPageClient({ district }: DistrictPageClientProps
                   <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-100">
                     <span className="text-[10px] uppercase font-bold text-slate-400 block">{t('Active Software Nodes', 'Active Software Nodes')}</span>
                     <span className="text-lg font-extrabold text-emerald-600">{t('ONLINE', 'ONLINE')}</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Suggested Technology Tools */}
-              <div className="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm">
-                <h3 className="text-base font-bold text-brand-dark border-b border-slate-100 pb-3 mb-4">
-                  {t('Target Tech Stack', 'Target Tech Stack')}
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex gap-3 text-xs text-slate-600">
-                    <Compass className="w-5 h-5 text-brand-blue shrink-0" />
-                    <span>{t('GIS Demographic Mapping', 'GIS Demographic Mapping')}</span>
-                  </div>
-                  <div className="flex gap-3 text-xs text-slate-600">
-                    <Database className="w-5 h-5 text-brand-blue shrink-0" />
-                    <span>{t('Secure Local Voter CRM', 'Secure Local Voter CRM')}</span>
-                  </div>
-                  <div className="flex gap-3 text-xs text-slate-600">
-                    <Sliders className="w-5 h-5 text-brand-blue shrink-0" />
-                    <span>{t('Panna Pramukh App Tracker', 'Panna Pramukh App Tracker')}</span>
                   </div>
                 </div>
               </div>
