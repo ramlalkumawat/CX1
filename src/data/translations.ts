@@ -236,6 +236,8 @@ export const translations: Record<string, Record<string, string>> = {
     'Docker & Kubernetes': 'डॉकर और कुबेरनेट्स',
     'High-availability secure container orchestration': 'उच्च उपलब्धता सुरक्षित कंटेनर ऑर्केस्ट्रेशन',
     'Redis Cache Nodes': 'रेडिस कैश नोड्स',
-    'Ultra-fast key-value voter lookup caching': 'अति-तीव्र कुंजी-मान मतदाता लुकअप कैशिंग'
+    'Ultra-fast key-value voter lookup caching': 'अति-तीव्र कुंजी-मान मतदाता लुकअप कैशिंग',
+    'Call Us': 'कॉल करें',
+    'Chat on WhatsApp': 'व्हाट्सएप पर चैट करें'
   }
 };

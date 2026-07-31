@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function WhatsAppButton() {
+  const { t } = useLanguage();
   const whatsappUrl = 'https://wa.me/916375983593?text=Hello%20CampaignX,%20I%20am%20interested%20in%20an%20election%20strategy%20audit.';
 
   return (
@@ -27,7 +29,7 @@ export default function WhatsAppButton() {
 
       {/* Tooltip/Label */}
       <span className="hidden md:block absolute right-16 opacity-0 translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 rounded bg-slate-900/90 text-white px-3 py-1.5 text-xs font-semibold whitespace-nowrap shadow-xl backdrop-blur-sm pointer-events-none">
-        Chat on WhatsApp
+        {t('Chat on WhatsApp', 'Chat on WhatsApp')}
       </span>
     </a>
   );

@@ -3,6 +3,7 @@ import { Sora, Inter } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/Providers';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import CallButton from '@/components/CallButton';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -132,6 +133,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <WhatsAppButton />
+          <CallButton />
         </Providers>
       </body>
     </html>
